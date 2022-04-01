@@ -327,7 +327,7 @@
         });*/
 
         const popup = new mapboxgl.Popup()
-          .setHTML(`<h3>Route ${bus.route} to ${bus.headsign}</h3><br>`);
+          .setHTML(`<h3>Route ${bus.route} to ${bus.headsign}</h3>`);
         
         let marker = new mapboxgl.Marker(el)
           .setLngLat([bus.longitude, bus.latitude])
