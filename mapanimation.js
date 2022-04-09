@@ -1,4 +1,4 @@
-
+window.onload = () => {
 mapboxgl.accessToken =
   'pk.eyJ1Ijoia21wMTA5IiwiYSI6ImNsMWRybW0wZTA3MHMzcXA4NjhkYnhhMDkifQ.S18q4Vqu3DnCyZL8k5lcRA';
 
@@ -7,7 +7,7 @@ let map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/streets-v11',
   center: [-71.104081, 42.3656],
-  zoom: 14.8,
+  zoom: 13.9,
 });
 
 // add map navigation controls
@@ -332,8 +332,8 @@ async function run() {
 
   // timer
   // don't call mbta too often
-  // (15 seconds let them know you are not trying denial of service attack)
-  setTimeout(run, 30000);
+  // (15 seconds lets them know you are not trying denial of service attack)
+  setTimeout(run, 15000);
 }
 
 // Request bus data from MBTA
@@ -347,3 +347,5 @@ async function getBusInformation() {
 }
 
 run();
+
+}
