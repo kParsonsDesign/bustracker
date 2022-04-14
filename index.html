@@ -40,35 +40,40 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body>
-    <!-- Header Bar -->
     <header>
+      <!-- Dropdown Nav Content -->
       <div class="collapse bg-dark" id="navbarHeader">
         <div class="container">
           <div class="row">
             <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">About</h4>
+              <h4 class="text-white">About Me</h4>
               <img
                 class="rounded-circle float-start avatar me-2"
                 src="https://kParsonsDesign.github.io/assets/images/KParsons_self_DC_2017.jpg"
                 alt="Katherine Parsons profile photo"
               />
               <p class="text-muted">
-                Add some information about the album below, the author, or any
-                other background context. Make it a few sentences long so folks
-                can pick up some informative tidbits. Then, link them off to
-                some social networking sites or contact information.
+                I'm a partner in a small publishing company. This portfolio is
+                to showcase some of my web development work. I hope you enjoy
+                some of the projects I've worked on.
               </p>
             </div>
             <div class="col-sm-4 offset-md-1 py-4">
               <h4 class="text-white">Contact</h4>
               <ul class="list-unstyled">
-                <li><a href="#" class="text-white">LinkedIn</a></li>
-                <li><a href="#" class="text-white">Like on Facebook</a></li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/kparsons-design"
+                    class="text-white"
+                    >LinkedIn</a
+                  >
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
+      <!-- Nav Bar -->
       <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
           <a
@@ -77,6 +82,11 @@
           >
             <strong>kParsons Design</strong>
           </a>
+          <a
+            href="https://kParsonsDesign.github.io/projects.html"
+            class="navbar-nav text-white d-flex"
+            >Projects</a
+          >
           <button
             class="navbar-toggler"
             type="button"
@@ -99,11 +109,10 @@
             <h1 class="fw-light">Real-Time Bus Tracking</h1>
             <p class="lead">
               View the positions of busses on Boston's Route 1 as they get
-              updated live
+              updated every 15 seconds
             </p>
-            <p class="grid-container">
-              <a class="btn btn-primary my-2">Primary Call to Action</a>
-              <a class="btn btn-secondary my-2">Secondary Button</a>
+            <p class="update-time text-muted">
+              Time to next update: <span id="countdown">15</span> seconds.
             </p>
           </div>
         </div>
@@ -115,6 +124,10 @@
           Showing Route 1 Busses
         </div> -->
       </div>
+
+      <section class="col-lg-8 col-md-12 mx-auto p-5">
+        <p><button type="button" class="btn btn-outline-secondary" onclick="window.location.href='https://github.com/kParsonsDesign/bustracker/';">Code Repo</button></p>
+      </section>
     </main>
 
     <!-- Bootstrap Bundle with Popper -->
@@ -123,6 +136,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <!-- Map Animation -->
     <script src="./mapanimation.js"></script>
   </body>
 </html>

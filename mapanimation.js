@@ -281,14 +281,15 @@ function mapBuses(bus) {
   });*/
 
   const popup = new mapboxgl.Popup()
-    .setHTML(`<h3>Route ${bus.route} to ${bus.headsign}</h3>`);
+    .setHTML(`<h5>Route ${bus.route} to ${bus.headsign}</h5>`);
   
   let marker = new mapboxgl.Marker(el)
     .setLngLat([bus.longitude, bus.latitude])
     .setPopup(popup)
     .addTo(map);
   allMarkers.push(marker);
-  console.log(bus.bearing);
+  // future update: fix bus bearing no information
+  // console.log(bus.bearing);
 }
 
 // build bus data from json included and data
@@ -323,12 +324,32 @@ function updateBuses(json) {
   busses.forEach(mapBuses);
 }
 
+// on page countdown to next update
+let timer;
+let counter;
+let countspan = document.getElementById('countdown');
+
+function countdown() {
+  if (timer != undefined || timer != null) {
+    clearInterval(timer);
+    timer = null;
+  }
+  counter = 15;
+  
+  function runcountdown() {
+    counter -= 1;
+    countspan.innerText = `${counter}`;
+  }
+  timer = setInterval(runcountdown , 1000);
+}
+
 async function run() {
   // get bus data
   const json = await getBusInformation();
-  console.log(new Date());
-  //console.log(json);
   updateBuses(json);
+
+  // update countdown on page
+  countdown();
 
   // timer
   // don't call mbta too often
@@ -342,7 +363,6 @@ async function getBusInformation() {
     'https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip';
   const response = await fetch(url);
   const json = await response.json();
-  console.log(json);
   return json;
 }
 
