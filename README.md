@@ -4,12 +4,14 @@
 ## Description
 This project is to track the current bus locations for busses on Route 1 in Boston, MA, specifically between MIT and Harvard. We are using **mapbox** as the mapping platform and accessing live bus gps information from the **MBTA API**.
 
+### Refactoring:
+
 I added layers showing the route location on the map as well as the stops. I also added onhover popups to show the stop titles.
 
 To track the current bus locations I am using "markers". For the markers I created a custom svg file and in addition to positioning using the latitude and longitude I also have them orient based on supplied direction (bearing) data. The markers also have a popup which shows the route number and last stop (direction) that can be activated by clicking on them.
 
 ## How to Run
-This project can be viewed live at [kparsonsDesign.github.io/bustracker/](kparsonsdesign.github.io/bustracker/).
+This project can be viewed live at [kparsonsDesign.github.io/bustracker/](https://kparsonsdesign.github.io/bustracker/).
 
 ## Roadmap of Future Improvements
 - Improve the functionality of the marker popups so that they are onhover events instead of click.
